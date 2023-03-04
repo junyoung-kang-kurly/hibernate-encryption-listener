@@ -1,4 +1,4 @@
-package com.arnoldgalovics.blog.hibernateencryptionlistener.repository;
+package com.arnoldgalovics.blog.hibernateencryptionlistener.domain;
 
 import com.arnoldgalovics.blog.hibernateencryptionlistener.encryption.Encrypted;
 
@@ -6,8 +6,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.UUID;
+import lombok.ToString;
 
 @Entity
+@ToString
 public class Phone {
     @Id
     private UUID id;

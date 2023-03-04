@@ -1,6 +1,6 @@
 package com.arnoldgalovics.blog.hibernateencryptionlistener;
 
-import com.arnoldgalovics.blog.hibernateencryptionlistener.repository.Phone;
+import com.arnoldgalovics.blog.hibernateencryptionlistener.domain.Phone;
 import net.ttddyy.dsproxy.QueryCountHolder;
 import org.junit.After;
 import org.junit.Test;
