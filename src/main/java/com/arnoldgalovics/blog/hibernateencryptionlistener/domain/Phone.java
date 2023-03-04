@@ -1,15 +1,18 @@
 package com.arnoldgalovics.blog.hibernateencryptionlistener.domain;
 
+import com.arnoldgalovics.blog.hibernateencryptionlistener.config.PhonePersistentListener;
 import com.arnoldgalovics.blog.hibernateencryptionlistener.encryption.Encrypted;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.Id;
 import java.util.UUID;
 import lombok.ToString;
 
 @Entity
 @ToString
+@EntityListeners(PhonePersistentListener.class)
 public class Phone {
     @Id
     private UUID id;

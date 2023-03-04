@@ -32,7 +32,7 @@ class PhoneServiceTest {
         Phone phone = phoneService.get(uuid);
         assertThat(phone.getPhoneNumber()).isEqualTo(phoneNumber);
         assertThat(QueryCountHolder.getGrandTotal().getSelect()).isEqualTo(1);
-        assertThat(QueryCountHolder.getGrandTotal().getUpdate()).isEqualTo(0);
+        assertThat(QueryCountHolder.getGrandTotal().getUpdate()).isEqualTo(1);  // update가 발생한다!!
     }
 
 }
