@@ -2,26 +2,23 @@ package com.arnoldgalovics.blog.hibernateencryptionlistener;
 
 import com.arnoldgalovics.blog.hibernateencryptionlistener.domain.Phone;
 import net.ttddyy.dsproxy.QueryCountHolder;
-import org.junit.After;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.persistence.Query;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
-public class PhoneEncryptionTest {
+class PhoneEncryptionTest {
     @Autowired
     private TransactionalRunner txRunner;
 
-    @After
-    public void tearDown() {
+    @AfterEach
+    void tearDown() {
         txRunner.doInTransaction(em -> {
             em.createQuery("DELETE FROM Phone").executeUpdate();
         });

@@ -5,28 +5,25 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.UUID;
 import lombok.extern.slf4j.Slf4j;
 import net.ttddyy.dsproxy.QueryCountHolder;
-import org.junit.After;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 @Slf4j
-@RunWith(SpringRunner.class)
 @SpringBootTest
-public class PhoneServiceTest {
+class PhoneServiceTest {
 
     @Autowired
     private PhoneService phoneService;
 
-    @After
+    @AfterEach
     public void tearDown() {
         QueryCountHolder.clear();
     }
 
     @Test
-    public void hello() {
+    void hello() {
         String phoneNumber = "010-1111-2222";
         UUID uuid = phoneService.create(phoneNumber);
         QueryCountHolder.clear();
