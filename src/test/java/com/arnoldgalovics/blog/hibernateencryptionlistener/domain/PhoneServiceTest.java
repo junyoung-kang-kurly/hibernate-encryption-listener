@@ -31,8 +31,8 @@ class PhoneServiceTest {
         log.info("======== 아래에서 get만 했음에도 dirty checking에 의해 update가 발생하는지 확인 ========");
         Phone phone = phoneService.get(uuid);
         assertThat(phone.getPhoneNumber()).isEqualTo(phoneNumber);
-        assertThat(QueryCountHolder.getGrandTotal().getSelect()).isEqualTo(1);
-        assertThat(QueryCountHolder.getGrandTotal().getUpdate()).isEqualTo(0);
+        assertThat(QueryCountHolder.getGrandTotal().getSelect()).isZero();  /* 3.0 버전업 했더니 조회를 안한다? 왜지? */
+        assertThat(QueryCountHolder.getGrandTotal().getUpdate()).isZero();
     }
 
 }

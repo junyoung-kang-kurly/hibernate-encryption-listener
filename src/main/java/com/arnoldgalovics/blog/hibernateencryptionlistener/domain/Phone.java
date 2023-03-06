@@ -2,9 +2,9 @@ package com.arnoldgalovics.blog.hibernateencryptionlistener.domain;
 
 import com.arnoldgalovics.blog.hibernateencryptionlistener.encryption.Encrypted;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import java.util.UUID;
 import lombok.ToString;
 
@@ -16,7 +16,13 @@ public class Phone {
 
     @Column(name = "phone_number")
     @Encrypted
-    private String phoneNumber;
+    String phoneNumber;
+
+    @Encrypted
+    String address;
+
+    private String name;
+
 
     protected Phone() {
     }
